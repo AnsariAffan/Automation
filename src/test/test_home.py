@@ -9,8 +9,16 @@ class Test_Home(Test_Base):
     driver = webdriver.Chrome(service=abc)
 
     def test_click_On_Aboutpage(self):
-
         self.homepage = HomePage(self.driver)
         self.homepage.click_on_about_page()
-        text = self.homepage.get_element_text()
-        print(text)
+        assert "pass","Fails"
+
+    def test_click_On_allcourses(self):
+        self.homepage = HomePage(self.driver)
+        self.homepage.click_on_allcourses()
+        assert "pass", "Fails"
+
+
+
+
+

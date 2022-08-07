@@ -8,6 +8,7 @@ class HomePage(Utilities):
 
     home = ()
     about = (By.XPATH,"//li[@id='menu-item-25308']/a[.='About']")
+    allCourses = (By.XPATH, "//li[@id='menu-item-25309']/a[.='All Courses']")
 
     def __init__(self,driver):
         super().__init__(driver)
@@ -15,6 +16,9 @@ class HomePage(Utilities):
 
     def click_on_about_page(self):
         return  self.click(self.about)
+
+    def click_on_allcourses(self):
+        return  self.click(self.allCourses)
 
     def get_element_text(self):
         return  self.getElementText(self.about)
