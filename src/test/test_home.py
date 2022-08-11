@@ -17,6 +17,12 @@ class Test_Home(Test_Base):
 
 
 #pages functions
+    @pytest.mark.logo
+    def test_click_On_logo(self, setup):
+        self.homepage.click_on_logo()
+
+        # assert self.homepage.get_logo_text() == "About", "About is not clicked"
+
     @pytest.mark.home
     def test_click_On_HomePage(self,setup):
          self.homepage.click_on_home_page()

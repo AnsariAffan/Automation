@@ -22,5 +22,8 @@ class Utilities:
     def sendKey(self,by_locator,text):
         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).send_Keys(text)
 
+
+
+
     def closebrowser(self):
        self.driver.close()

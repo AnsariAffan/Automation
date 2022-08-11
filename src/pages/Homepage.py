@@ -7,17 +7,24 @@ from src.pages.Utilities import Utilities
 class HomePage(Utilities):
 
 # All Homepage selector path
+    logo = (By.XPATH,"//div[@class='ast-main-header-wrap main-header-bar-wrap ']//span[1]")
     all_nav_items = (By.XPATH,"//div[@id='ast-desktop-header']/div[1]")
     homePage = (By.XPATH, "//li[@id='menu-item-25307']/a[text()='Home']")
     about = (By.XPATH,"//li[@id='menu-item-25308']/a[.='About']")
     allCourses = (By.XPATH, "//li[@id='menu-item-25309']/a[.='All Courses']")
-    placement =(By.XPATH,"//li[@id='menu-item-25520']/a[.='Placements']")
+    placement = (By.XPATH,"//li[@id='menu-item-25520']/a[.='Placements']")
     contact = (By.XPATH,"//li[@id='menu-item-25310']/a[.='Contact']")
 
 # homePage fucntions
     def __init__(self,driver):
         super().__init__(driver)
         self.driver.get(TestData.baseURL)
+
+#Logo
+    def click_on_logo(self):
+        return self.click(self.logo)
+
+
 
 #Home Page
     def click_on_home_page(self):
