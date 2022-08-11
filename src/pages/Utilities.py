@@ -19,7 +19,6 @@ class Utilities:
         elementText = WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator))
         return elementText.text
 
-
     def sendKey(self,by_locator,text):
         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).send_Keys(text)
 

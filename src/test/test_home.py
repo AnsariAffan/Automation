@@ -16,25 +16,35 @@ class Test_Home(Test_Base):
         self.homepage = HomePage(self.driver)
 
 
-
+#pages functions
     @pytest.mark.home
     def test_click_On_HomePage(self,setup):
          self.homepage.click_on_home_page()
          assert self.homepage.get_homepage_text() =="Home","Not found"
-
 
     @pytest.mark.about
     def test_click_On_Aboutpage(self,setup):
          self.homepage.click_on_about_page()
          assert self.homepage.get_aboutpage_text() =="About","About is not available faild"
 
-
     @pytest.mark.allcourse
     def test_click_On_allcourses(self,setup):
         self.homepage.click_on_allcourses()
         assert self.homepage.get_allcoursespage_text() =="All Courses", "Allcoursespage is not clicked"
 
+    @pytest.mark.placements
+    def test_click_On_placements(self, setup):
+        self.homepage.click_on_placements()
+        assert self.homepage.get_placements_text() == "Placements", "placements is not clicked"
 
+    @pytest.mark.About
+    def test_click_On_About(self, setup):
+        self.homepage.click_on_about_page()
+        assert self.homepage.get_aboutpage_text() == "About", "About is not clicked"
+
+
+    def test_close_browser(self):
+        self.driver.close()
 
 
 
