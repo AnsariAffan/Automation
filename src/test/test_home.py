@@ -11,29 +11,31 @@ class Test_Home(Test_Base):
     abc = Service("./src/test/chromedriver.exe")
     driver = webdriver.Chrome(service=abc)
 
-
     @pytest.fixture()
     def setup(self):
         self.homepage = HomePage(self.driver)
 
-    @pytest.mark.test1
+
+
+    @pytest.mark.home
+    def test_click_On_HomePage(self,setup):
+         self.homepage.click_on_home_page()
+         assert self.homepage.get_homepage_text() =="Home","Not found"
+
+
+    @pytest.mark.about
     def test_click_On_Aboutpage(self,setup):
          self.homepage.click_on_about_page()
-         print("===================")
-
-         #for printing someting from print function -s
-         self.homepage.get_element_text()
-         print("===================")
+         assert self.homepage.get_aboutpage_text() =="About","About is not available faild"
 
 
-
-    @pytest.mark.test2
+    @pytest.mark.allcourse
     def test_click_On_allcourses(self,setup):
         self.homepage.click_on_allcourses()
+        assert self.homepage.get_allcoursespage_text() =="All Courses", "Allcoursespage is not clicked"
 
-    @pytest.mark.test3
-    def test_close_browser(self,setup):
-          self.homepage.closebrowser()
+
+
 
 
 

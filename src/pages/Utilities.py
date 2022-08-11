@@ -12,9 +12,13 @@ class Utilities:
     def click(self,by_locator):
         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).click()
 
+    def take_findelements(self,by_loators):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(by_loators))
+
     def getElementText(self,by_locator):
         elementText = WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator))
         return elementText.text
+
 
     def sendKey(self,by_locator,text):
         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).send_Keys(text)

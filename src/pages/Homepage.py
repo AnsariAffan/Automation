@@ -6,20 +6,39 @@ from src.pages.Utilities import Utilities
 
 class HomePage(Utilities):
 
-    home = ()
+# All Homepage selector path
+    all_nav_items = (By.XPATH,"//div[@id='ast-desktop-header']/div[1]")
+    homePage = (By.XPATH, "//li[@id='menu-item-25307']/a[text()='Home']")
     about = (By.XPATH,"//li[@id='menu-item-25308']/a[.='About']")
     allCourses = (By.XPATH, "//li[@id='menu-item-25309']/a[.='All Courses']")
+
+
+# homePage fucntions
 
     def __init__(self,driver):
         super().__init__(driver)
         self.driver.get(TestData.baseURL)
 
+
+#Home Page
+    def click_on_home_page(self):
+       return self.click(self.homePage)
+
+    def get_homepage_text(self):
+        return self.getElementText(self.homePage)
+
+#About Page
     def click_on_about_page(self):
         return  self.click(self.about)
 
-    def click_on_allcourses(self):
-        return  self.click(self.allCourses)
+    def get_aboutpage_text(self):
+        return self.getElementText(self.about)
 
-    def get_element_text(self):
-        return  self.getElementText(self.about)
+
+#All courses Page
+    def click_on_allcourses(self):
+        return self.click(self.allCourses)
+
+    def get_allcoursespage_text(self):
+        return self.getElementText(self.allCourses)
 
