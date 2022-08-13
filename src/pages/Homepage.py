@@ -14,13 +14,16 @@ class HomePage(Utilities):
     allCourses = (By.XPATH, "//li[@id='menu-item-25309']/a[.='All Courses']")
     placement = (By.XPATH,"//li[@id='menu-item-25520']/a[.='Placements']")
     contact = (By.XPATH,"//li[@id='menu-item-25310']/a[.='Contact']")
+    bodytitle = (By.XPATH,"//h1[.='One-stop solution for Software Testing skills']")
 
 # homePage fucntions
     def __init__(self,driver):
         super().__init__(driver)
         self.driver.get(TestData.baseURL)
 
-#Logo
+    '''================================================NAV BAR========================================================='''
+
+    '''==============================================LOGO FUNCTIONS=================================================='''
     def click_on_logo(self):
         return self.click(self.logo)
 
@@ -30,7 +33,8 @@ class HomePage(Utilities):
     def is_logo_display(self):
         return  self.isDisplay(self.logo)
 
-#Home Page
+    '''==============================================HOME LINK FUNCTIONS============================================='''
+
     def click_on_home_page(self):
        return self.click(self.homePage)
 
@@ -40,7 +44,8 @@ class HomePage(Utilities):
     def is_homepage_display(self):
         return  self.isDisplay(self.homePage)
 
-#About Page
+    '''==============================================ABOUT LINK FUNCTIONS============================================'''
+
     def click_on_about_page(self):
         return  self.click(self.about)
 
@@ -50,8 +55,8 @@ class HomePage(Utilities):
     def is_aboutpage_display(self):
         return  self.isDisplay(self.about)
 
+    '''==============================================ALLCOURSES LINK FUNCTIONS======================================='''
 
-#courses Page
     def click_on_allcourses(self):
         return self.click(self.allCourses)
 
@@ -61,7 +66,8 @@ class HomePage(Utilities):
     def is_allcoursespage_display(self):
         return  self.isDisplay(self.allCourses)
 
-#placments Page
+    '''==============================================PLACEMENTS LINK FUNCTIONS======================================='''
+
     def click_on_placements(self):
         return self.click(self.placement)
 
@@ -71,7 +77,9 @@ class HomePage(Utilities):
     def is_placementspage_display(self):
          return self.isDisplay(self.placement)
 
-#contact Page
+
+    '''=============================================CONTACT LINK FUNCTIONS=========================================='''
+
     def click_on_contact(self):
         return self.click(self.contact)
 
@@ -80,3 +88,5 @@ class HomePage(Utilities):
 
     def is_contact_display(self):
          return self.isDisplay(self.contact)
+
+    '''==============================================BODY============================================================'''

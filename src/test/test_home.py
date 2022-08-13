@@ -17,7 +17,9 @@ class Test_Home(Test_Base):
     def setup(self):
         self.homepage = HomePage(self.driver)
 
-#pages functions
+    '''=========================================PAGES FUNCTIONS======================================================'''
+
+    '''===========================================NAV BAR============================================================'''
 
     @pytest.mark.logo
     def test_click_On_logo(self, setup):
@@ -60,7 +62,12 @@ class Test_Home(Test_Base):
         assert self.homepage.getTabeName() == "Contact - Test Academy", "page not found"
         assert self.homepage.is_contact_display() == True, "not clicked"
 
+    '''==============================================BODY============================================================'''
 
+
+
+
+    '''==============================================CLOSE BROWSER==================================================='''
     def test_close_browser(self):
         self.driver.close()
 
