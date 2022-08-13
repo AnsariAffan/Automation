@@ -25,6 +25,8 @@ class HomePage(Utilities):
         return self.click(self.logo)
 
 
+    def get_tab_name(self):
+        return self.getTabeName()
 
 #Home Page
     def click_on_home_page(self):

@@ -17,6 +17,12 @@ class Test_Home(Test_Base):
 
 
 #pages functions
+
+    @pytest.mark.tabname
+    def test_tabeName(self, setup):
+        print(self.homepage.get_tab_name())
+        assert self.homepage.getTabeName() == "Home - Test Academy | Software Testing Institute in Nagpur","page not found"
+
     @pytest.mark.logo
     def test_click_On_logo(self, setup):
         self.homepage.click_on_logo()
@@ -42,11 +48,6 @@ class Test_Home(Test_Base):
     def test_click_On_placements(self, setup):
         self.homepage.click_on_placements()
         assert self.homepage.get_placements_text() == "Placements", "placements is not clicked"
-
-    @pytest.mark.About
-    def test_click_On_About(self, setup):
-        self.homepage.click_on_about_page()
-        assert self.homepage.get_aboutpage_text() == "About", "About is not clicked"
 
 
     def test_close_browser(self):
