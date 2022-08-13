@@ -25,13 +25,14 @@ class Test_Home(Test_Base):
     def test_click_On_logo(self, setup):
         self.homepage.click_on_logo()
         assert self.homepage.getTabeName() == "Home - Test Academy | Software Testing Institute in Nagpur", "page not found"
-
+        assert self.homepage.is_logo_display() == True, "not clicked"
 
     @pytest.mark.home
     def test_click_On_HomePage(self,setup):
-         assert self.homepage.click_on_home_page()
+         self.homepage.click_on_home_page()
          assert self.homepage.get_homepage_text() =="Home","home page not found"
          assert self.homepage.getTabeName() == "Home - Test Academy | Software Testing Institute in Nagpur", "page not found"
+         assert self.homepage.is_homepage_display() == True, "not clicked"
 
 
     @pytest.mark.about
@@ -39,6 +40,8 @@ class Test_Home(Test_Base):
          self.homepage.click_on_about_page()
          assert self.homepage.get_aboutpage_text() =="About","About is not available faild"
          assert self.homepage.getTabeName() == "About - Test Academy", "page not found"
+         assert self.homepage.is_aboutpage_display() == True,"not clicked"
+
 
 
     @pytest.mark.allcourse
@@ -46,20 +49,21 @@ class Test_Home(Test_Base):
         self.homepage.click_on_allcourses()
         assert self.homepage.get_allcoursespage_text() =="All Courses", "Allcoursespage is not clicked"
         assert self.homepage.getTabeName() == "All Courses - Test Academy", "page not found"
-
+        assert self.homepage.is_allcoursespage_display() == True, "not clicked"
 
     @pytest.mark.placements
     def test_click_On_placements(self, setup):
         self.homepage.click_on_placements()
         assert self.homepage.get_placements_text() == "Placements", "placements is not clicked"
         assert self.homepage.getTabeName() == "Placements - Test Academy", "page not found"
-
+        assert self.homepage.is_placementspage_display() == True, "not clicked"
 
     @pytest.mark.placements
     def test_click_On_Contact(self, setup):
         self.homepage.click_on_contact()
         assert self.homepage.get_contact_text() == "Contact", "placements is not clicked"
         assert self.homepage.getTabeName() == "Contact - Test Academy", "page not found"
+        assert self.homepage.is_contact_display() == True, "not clicked"
 
 
     def test_close_browser(self):

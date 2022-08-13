@@ -24,9 +24,11 @@ class HomePage(Utilities):
     def click_on_logo(self):
         return self.click(self.logo)
 
-
     def get_logo_text(self):
         return self.getElementText(self.logo)
+
+    def is_logo_display(self):
+        return  self.isDisplay(self.logo)
 
 #Home Page
     def click_on_home_page(self):
@@ -35,6 +37,9 @@ class HomePage(Utilities):
     def get_homepage_text(self):
         return self.getElementText(self.homePage)
 
+    def is_homepage_display(self):
+        return  self.isDisplay(self.homePage)
+
 #About Page
     def click_on_about_page(self):
         return  self.click(self.about)
@@ -42,25 +47,36 @@ class HomePage(Utilities):
     def get_aboutpage_text(self):
         return self.getElementText(self.about)
 
+    def is_aboutpage_display(self):
+        return  self.isDisplay(self.about)
 
-#All courses Page
+
+#courses Page
     def click_on_allcourses(self):
         return self.click(self.allCourses)
 
     def get_allcoursespage_text(self):
         return self.getElementText(self.allCourses)
 
-#All placments Page
+    def is_allcoursespage_display(self):
+        return  self.isDisplay(self.allCourses)
+
+#placments Page
     def click_on_placements(self):
         return self.click(self.placement)
 
     def get_placements_text(self):
         return self.getElementText(self.placement)
 
-#All contact Page
+    def is_placementspage_display(self):
+         return self.isDisplay(self.placement)
+
+#contact Page
     def click_on_contact(self):
         return self.click(self.contact)
 
     def get_contact_text(self):
         return self.getElementText(self.contact)
 
+    def is_contact_display(self):
+         return self.isDisplay(self.contact)

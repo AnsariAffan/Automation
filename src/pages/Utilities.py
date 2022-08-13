@@ -25,6 +25,9 @@ class Utilities:
     def getTabeName(self):
         return self.driver.title
 
+    def isDisplay(self,by_locator):
+        return  WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(by_locator)).is_displayed()
+
 
     def closebrowser(self):
        self.driver.close()
