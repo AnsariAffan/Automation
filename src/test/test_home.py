@@ -13,11 +13,9 @@ class Test_Home(Test_Base):
     abc = Service("./src/test/chromedriver.exe")
     driver = webdriver.Chrome(service=abc)
 
-
     @pytest.fixture()
     def setup(self):
         self.homepage = HomePage(self.driver)
-
 
 #pages functions
 
@@ -34,15 +32,12 @@ class Test_Home(Test_Base):
          assert self.homepage.getTabeName() == "Home - Test Academy | Software Testing Institute in Nagpur", "page not found"
          assert self.homepage.is_homepage_display() == True, "not clicked"
 
-
     @pytest.mark.about
     def test_click_On_Aboutpage(self,setup):
          self.homepage.click_on_about_page()
          assert self.homepage.get_aboutpage_text() =="About","About is not available faild"
          assert self.homepage.getTabeName() == "About - Test Academy", "page not found"
          assert self.homepage.is_aboutpage_display() == True,"not clicked"
-
-
 
     @pytest.mark.allcourse
     def test_click_On_allcourses(self,setup):
