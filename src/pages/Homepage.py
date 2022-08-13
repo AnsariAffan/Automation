@@ -25,8 +25,8 @@ class HomePage(Utilities):
         return self.click(self.logo)
 
 
-    def get_tab_name(self):
-        return self.getTabeName()
+    def get_logo_text(self):
+        return self.getElementText(self.logo)
 
 #Home Page
     def click_on_home_page(self):
@@ -52,15 +52,15 @@ class HomePage(Utilities):
 
 #All placments Page
     def click_on_placements(self):
-        return self.click(self.allCourses)
+        return self.click(self.placement)
 
     def get_placements_text(self):
         return self.getElementText(self.placement)
 
 #All contact Page
     def click_on_contact(self):
-        return self.click(self.allCourses)
+        return self.click(self.contact)
 
     def get_contact_text(self):
-        return self.getElementText(self.placement)
+        return self.getElementText(self.contact)
 
