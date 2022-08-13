@@ -29,7 +29,7 @@ class Test_Home(Test_Base):
 
     @pytest.mark.home
     def test_click_On_HomePage(self,setup):
-         self.homepage.click_on_home_page()
+         assert self.homepage.click_on_home_page()
          assert self.homepage.get_homepage_text() =="Home","home page not found"
          assert self.homepage.getTabeName() == "Home - Test Academy | Software Testing Institute in Nagpur", "page not found"
 

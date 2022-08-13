@@ -25,5 +25,6 @@ class Utilities:
     def getTabeName(self):
         return self.driver.title
 
+
     def closebrowser(self):
        self.driver.close()
