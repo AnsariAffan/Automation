@@ -90,3 +90,9 @@ class HomePage(Utilities):
          return self.isDisplay(self.contact)
 
     '''==============================================BODY============================================================'''
+
+    def get_body_title_text(self):
+        return self.getElementText(self.bodytitle)
+
+    def is_body_title_display(self):
+         return self.isDisplay(self.bodytitle)

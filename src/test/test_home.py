@@ -64,6 +64,10 @@ class Test_Home(Test_Base):
 
     '''==============================================BODY============================================================'''
 
+    @pytest.mark.body_title
+    def test_verify_body_title(self,setup):
+        assert  self.homepage.get_body_title_text() == "One-stop solution for Software Testing skills","Body title not found"
+        assert self.homepage.is_body_title_display() ==True,"Body title not found"
 
 
 
